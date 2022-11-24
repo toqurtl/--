@@ -9,9 +9,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 
 public class Test {
@@ -22,8 +19,17 @@ public class Test {
 
     public static void main(String[] args){    
     
-    
+        Test.read_data();
+        System.out.println(student_map.size());
 
+        
+
+    }
+
+    public static void read_data(){
+        Test.read_class_data("class.csv");
+        Test.read_teacher_data("teacher.csv");
+        Test.read_student_data("student.csv");
     }
 
     public static void read_student_data(String file_name){        
@@ -35,10 +41,17 @@ public class Test {
             br.readLine();
             while((line=br.readLine())!=null){                
                 String[] line_arr = line.split(",");
-                int id = Integer.parseInt(line_arr[0]);
+                int id = Integer.parseInt(line_arr[0]);                
                 String name = line_arr[1];
-                Student s = new Student(id, name);
-                
+                Student s = new Student(id, name);                
+                int class_id = Integer.parseInt(line_arr[2]);
+                s.c = Test.class_map.get(class_id);
+                    
+                s.score_map.put("kor", Double.parseDouble(line_arr[3]));
+                s.score_map.put("eng", Double.parseDouble(line_arr[4]));
+                s.score_map.put("mat", Double.parseDouble(line_arr[5]));
+                s.score_map.put("sci", Double.parseDouble(line_arr[6]));
+                                
                 Test.student_map.put(id, s);
 
             }            
@@ -61,8 +74,7 @@ public class Test {
     public static void read_teacher_data(String file_name){        
         File csv = new File(file_name);
         BufferedReader br = null;
-        String line = "";
-        HashMap<String, Teacher> teacher_map = new HashMap<String, Teacher>();
+        String line = "";        
         try{
             br = new BufferedReader(new FileReader(csv));
             br.readLine();
@@ -72,10 +84,8 @@ public class Test {
                 String name = line_arr[1];
                 int class_id = Integer.parseInt(line_arr[2]);
                 Teacher t = new Teacher(id, name);
-                Test.teacher_map.put(t.id, Test.teacher_map.get(class_id));
-
-                
-
+                t.c = Test.class_map.get(class_id);
+                Test.teacher_map.put(t.id, t);
             }            
         }catch(FileNotFoundException e){
             e.printStackTrace();

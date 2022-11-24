@@ -1,10 +1,13 @@
 package src;
 
+import src.Class;
 import java.util.ArrayList;
+
 
 public class Teacher {
     public int id;
     public String name;
+    public Class c;
     public ArrayList<Student> student_list = new ArrayList<Student>();
 
     public Teacher(int id, String name){
