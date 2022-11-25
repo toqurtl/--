@@ -1,16 +1,29 @@
 
 import src.School;
+import src.Teacher;
 
 
 public class Test {
 
+    // for문 쓰는법 -> 두개
+    // 일반적인 for문
+    // Hashmap, ArrayList -> COllection -> Collection을 for문돌
+
+    //Hashmap, ArrayLIst -> 이것을 선언하는 것-> 이 안에 어떤 메소드들
+
+    // Input/OUtput -> csv를 읽고 쓰는 것
    
     public static void main(String[] args){    
-    
-        School school = new School("class.csv", "teacher.csv", "student.csv");
-        System.out.println(school.subject_average("국어"));
+        int a = 5;
+        School s = new School("class.csv", "teacher.csv", "student.csv");
+        s.subject_average("국어");
+
         
     }
+
+    // HW0
+    // 제 코드를 이해하십쇼
+    // school 생성자-> csv파일을 읽어서 hashmap다가 다 집어넣는게
 
     // HW1 난이도 1
     public static void save_result(){

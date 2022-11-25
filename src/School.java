@@ -9,6 +9,7 @@ import java.util.HashMap;
 
 
 public class School {
+    
     public HashMap<Integer, Class> class_map = new HashMap<Integer, Class>();
     public HashMap<Integer, Student> student_map = new HashMap<Integer, Student>();
     public HashMap<Integer, Teacher> teacher_map = new HashMap<Integer, Teacher>();
@@ -31,6 +32,7 @@ public class School {
 
 
     private void read_data(String class_file_path, String teacher_file_path, String student_file_path){
+        // 반-> 학교 -> 학생
         this.read_class_data(class_file_path);
         this.read_teacher_data(teacher_file_path);
         this.read_student_data(student_file_path);
