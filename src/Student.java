@@ -13,12 +13,16 @@ public class Student {
         this.name = name;
     }
 
-    public int average_score(){
+    public double average_score(){
         int avg = 0;
         for(double a: score_map.values()){
             avg+=a;
         }
         return avg / score_map.size();
+    }
+
+    public double subject_score(String subject_name){
+        return score_map.get(subject_name);
     }
 
 }
