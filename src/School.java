@@ -52,13 +52,14 @@ public class School {
                 Student s = new Student(id, name);                
                 int class_id = Integer.parseInt(line_arr[2]);
                 s.c = this.class_map.get(class_id);
-                    
+                s.c.student_map.put(s.id, s);
                 s.score_map.put("국어", Double.parseDouble(line_arr[3]));
                 s.score_map.put("영어", Double.parseDouble(line_arr[4]));
                 s.score_map.put("수학", Double.parseDouble(line_arr[5]));
                 s.score_map.put("과학", Double.parseDouble(line_arr[6]));
-                                
+                
                 this.student_map.put(id, s);
+                
 
             }            
         }catch(FileNotFoundException e){

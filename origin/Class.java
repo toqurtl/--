@@ -3,10 +3,10 @@ package origin;
 import java.util.HashMap;
 
 public class Class {
-    int id;
-    String name;
-    Teacher teacher;
-    HashMap<Integer, Student> student_map = new HashMap<Integer, Student>();
+    public int id;
+    public String name;
+    public Teacher teacher;
+    public HashMap<Integer, Student> student_map = new HashMap<Integer, Student>();
 
     public Class(int id, String name){
         this.id = id;
