@@ -19,8 +19,7 @@ public class Playground {
         test_map.put(2, p2);
 
         System.out.println(test_map.get(2));
-        int bc = 3;
-        
+        int bc = 3;        
 
     }
 }

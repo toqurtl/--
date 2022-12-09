@@ -20,3 +20,5 @@ class TestClass(object):
 
 t = Test(1,20, "fuck", TestClass(3))
 t.testclass
+
+print('ssibal')
