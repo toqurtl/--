@@ -1,4 +1,7 @@
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import src.School;
 import src.Teacher;
 
@@ -13,12 +16,14 @@ public class Test {
 
     // Input/OUtput -> csv를 읽고 쓰는 것
    
-    public static void main(String[] args){    
-        int a = 5;
-        School s = new School("class.csv", "teacher.csv", "student.csv");
-        s.subject_average("국어");
+    public static void main(String[] args){   
 
         
+    }
+
+    public static String fuck(int a){
+
+        return "test"+a;
     }
 
     // HW0

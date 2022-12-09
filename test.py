@@ -1,9 +1,22 @@
-a = [1,2,3,4,5]
+class Test(object):
 
-test_dict = {
-    "a": 5,
-    "b": 4,
-    "c": 5
-}
+    def __init__(self, id, age, name, testclass):
+        self.id = id
+        self.name = name
+        self.age = age
+        self.testclass = testclass
+        
 
-print(test_dict["c"])
+    def double_age(self):
+        return self.age * 2.0
+
+    def __str__(self):
+        return str(self.id)+self.name+str(self.age)
+
+class TestClass(object):
+    def __init__(self, id):
+        self.id = id
+
+
+t = Test(1,20, "fuck", TestClass(3))
+t.testclass
